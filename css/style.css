@@ -1,7 +1,93 @@
+html {
+	box-sizing: border-box; /*padding и border включаются в общую ширину и высоту элемента*/
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	max-width: 1920px; /*резиновая ширина*/
+	min-width: 375px;
+	height: 100vh; /*значение высоты опр-ся по viewport*/
+	background: url(../img/iswanto-arif-448003-unsplash.jpg) no-repeat center; /*фоновая картинка*/
+	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
+	color: #E8EEE4; /*цвет шрифта*/
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+}
+
+/*header styles start*/
+
+.head { 
+	max-width: 1607px; /*резиновая ширина*/
+	margin: 0 auto; /*выравнивание по центру*/
+	display: flex; 
+	flex-wrap: wrap; /*перенос пунктов*/
+	align-items: flex-end; /*вертикальное выравнивание по нижнему краю контейнера*/
+	justify-content: space-between; /*выравнивание по краям конейнера*/
+	padding-top: 8.2%; /*отступ сверху*/
+	margin-bottom: 100px; /*отсутп вниз*/
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+}
+
+.head__menu {
+	display: flex;
+	flex-wrap: wrap;
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+}
+
+.menu__link {
+	color: #E8EEE4;
+	margin-right: 33.75px; /*отступ справа у пуктов меню*/
+	text-decoration: none; /*убрали нижнее подчеркивание*/
+}
+
+.menu__link:last-child {
+	margin-right: 0; /*убрали отступ справа у последнего пункта меню*/
+}
+
+.menu__link:hover, .menu__link:focus, .menu__link:active { /*стили для наведения на ссылки меню*/
+	opacity: .50;
+}
+
+/*header styles end*/
+
+
+/*content styles start*/
+
+.content {
+	max-height: 600px;
+	display: flex;
+}
+
+.info {
+	display: flex;
+	flex-flow: wrap;
+	max-width: 551px;
+	max-height: 600px;
+}
+
 .info__title {
-	font-family: PTSerif
+
+}
+
+.info__title_big {
+
+}
+
+.info__title_small {
+	font-family: 'PT Serif';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 98px;
+	line-height: 130px;
 }
 
 .info__description {
-font-family: MuseoSansCyrl
+	
 }
+
+.column-img {
+	
+}
+/*content styles end*/
