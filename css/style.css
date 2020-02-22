@@ -24,8 +24,8 @@ body {
 	display: flex; 
 	flex-wrap: wrap; /*перенос пунктов*/
 	align-items: flex-end; /*вертикальное выравнивание по нижнему краю контейнера*/
-	justify-content: space-between; /*выравнивание по краям конейнера*/
-	padding-top: 8.2%; /*отступ сверху*/
+	justify-content: space-between; /*выравнивание по ширине - по краям конейнера*/
+	padding-top: 6%; /*отступ сверху*/
 	margin-bottom: 100px; /*отсутп вниз*/
 	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
 }
@@ -56,38 +56,66 @@ body {
 /*content styles start*/
 
 .content {
-	max-height: 600px;
 	display: flex;
+	max-height: 600px; /*резиновая высота*/
+	max-width: 1607px; /*резиновая ширина*/
+	
+	
 }
 
 .info {
+	flex: 1.5; /*ширина флекс элемента*/
+	justify-content: center; /*выравнивание элементов по ширине - центр*/
 	display: flex;
-	flex-flow: wrap;
-	max-width: 551px;
-	max-height: 600px;
+	flex-flow: column; /*flex-элементы в виде блоков друг над другом*/
+	max-width: 551px; /*резиновая ширина*/
+	max-height: 600px; /*резиновая высота*/
 }
 
 .info__title {
+	max-height: 400px; /*резиновая высота*/
+	max-width: 530px; /*резиновая ширина*/
 
 }
-
 .info__title_big {
-
+	width: 100%;
 }
+
 
 .info__title_small {
-	font-family: 'PT Serif';
+	/*left: 60px;
+	top: 150px;*/
+	font-family: 'PT Serif'; /*шрифт*/
 	font-style: normal;
 	font-weight: bold;
 	font-size: 98px;
 	line-height: 130px;
+	margin: -70px 0 25px 70px; /*отступы, чтобы надпись съехала впрво вверх*/
 }
 
-.info__description {
-	
+.button__book {
+	width: 293px;
+	height: 62px;
+	background: #D4BEA3; /*цвет бэкграунда*/
+	border-radius: 48px; /*закругление кнопки*/
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+	color: #FFF; /*цвет шрифта*/
+	border: none; /*рамка - нет*/
+	outline: none; /*внешний контур*/
+	cursor: pointer; /*курсор - указатель*/
 }
 
 .column-img {
-	
+	flex: 1; /*ширина флекс элемента*/
+	display: flex;
+	justify-content: flex-end;  /*выравние ширине - по правому краю строки*/
+	align-items: center; /*выравнивание по высоте - центр*/
 }
+
+.img__title {
+	margin-right: 33.75px; /*отступ справа у */
+}
+
+.img__title:last-child {
+	margin-right: 0; /*убрали отступ справа у последней картинки*/
 /*content styles end*/
