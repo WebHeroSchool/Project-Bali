@@ -1,7 +1,297 @@
-.info__title {
-	font-family: PTSerif
+html {
+	box-sizing: border-box; /*padding и border включаются в общую ширину и высоту элемента*/
 }
 
-.info__description {
-font-family: MuseoSansCyrl
+*, *::before, *::after {
+	box-sizing: inherit;
 }
+
+body {
+	max-width: 1920px; /*резиновая ширина*/
+	min-width: 375px;
+	height: 100vh; /*значение высоты опр-ся по viewport*/
+	margin: 0 auto; /*выравнивание по центру*/
+	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
+	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
+	color: #E8EEE4; /*цвет шрифта*/
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+	overflow: hidden;
+}
+
+/*header styles start*/
+.container {
+	max-width: 1650px; /*резиновая ширина*/
+	margin: 0 auto; /*выравнивание по центру*/
+	padding: 0 15px;
+}
+
+.header__row { 
+	display: flex; 
+	align-items: flex-end; /*вертикальное выравнивание по нижнему краю контейнера*/
+	justify-content: space-between; /*выравнивание по ширине - по краям конейнера*/
+	width: 100%;
+	margin-left: 5%;
+	margin-bottom: 9.5%; /*отсутп вниз*/
+}
+
+.header__logo {
+	padding-top: 8.2%;
+	width: 146px;
+}
+
+.header__logo img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.header__menu .menu{
+	display: flex;
+	padding-right: 30px;
+
+}
+
+.menu__link {
+	color: #E8EEE4;
+	margin-right: 33.75px; /*отступ справа у пуктов меню*/
+	text-decoration: none; /*убрали нижнее подчеркивание*/
+}
+
+.menu__link:hover, .menu__link:focus, .menu__link:active { /*стили для наведения на ссылки меню*/
+	opacity: .50;
+}
+
+.header__burger {
+	display: none;
+	width: 25px;
+	height: 17px;
+	position: relative;
+}
+
+.burger__line {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #FCF5ED;
+	position: absolute;
+	left: 0;
+
+}
+
+.burger__line_first {
+	top: 0;
+}
+
+.burger__line_second {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.burger__line_third {
+	bottom: 0;
+}
+/*header styles end*/
+
+
+/*content styles start*/
+
+.content {
+	display: flex;
+	margin-left: 5%;
+
+}
+
+.info {
+	flex: 2; /*ширина флекс элемента*/
+	justify-content: center; /*выравнивание элементов по ширине - центр*/
+	display: flex;
+	flex-flow: column; /*flex-элементы в виде блоков друг над другом*/
+	max-width: 551px; /*резиновая ширина*/
+	max-height: 600px; /*резиновая высота*/
+	margin-right: 16.63%;
+}
+
+.info__title {
+	max-height: 400px; /*резиновая высота*/
+	max-width: 530px; /*резиновая ширина*/
+}
+
+.info__title_big {
+	height: auto;
+	width: 527px;
+}
+
+.info__title_big img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.info__title_small {
+	font-family: 'PT Serif'; /*шрифт*/
+	font-style: normal;
+	font-size: 98px;
+	line-height: 130px;
+	margin: -70px 0 25px 70px; /*отступы, чтобы надпись съехала впрво вверх*/
+}
+
+.button__book {
+	width: 293px;
+	height: 62px;
+	background: #D4BEA3; /*цвет бэкграунда*/
+	border-radius: 48px; /*закругление кнопки*/
+	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
+	color: #FFF; /*цвет шрифта*/
+	border: none; /*рамка - нет*/
+	outline: none; /*внешний контур*/
+	cursor: pointer; /*курсор - указатель*/
+}
+
+.column-img {
+	flex: 1 1 auto; 
+	display: flex;
+	justify-content: flex-end;  /*выравние ширине - по правому краю строки*/
+	align-items: center; /*выравнивание по высоте - центр*/
+	max-width: 880px;
+	min-width: 610px;
+}
+
+.img__title {
+	flex: 1 1 auto; 
+	margin-right: 33.75px; 
+}
+
+.img__title:last-child {
+	margin-right: 0; /*убрали отступ справа у последней картинки*/
+}
+
+/*content styles end*/
+
+/*Media start*/
+
+@media (min-width: 769px) and (max-width: 1366px) {
+	body {
+		max-width: 1366px; 
+		min-width: 1024px;
+		font: normal 16px/19px MuseoSansCyrl;
+	}
+
+	.header__logo {
+		width: 104px;
+	}
+
+	.info__title_big {
+		width: 375px;
+	}
+
+	.info__title_small {
+		font-size: 70px;
+		line-height: 93px;
+		margin: -70px 0 25px 70px; 
+	}
+
+	.button__book {
+		width: 209px;
+		height: 44px;
+		font: normal 16px/19px MuseoSansCyrl;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.header__row { 
+		margin-bottom: 50%; 
+	}
+
+	.header__logo {
+		width: 104px;
+	}
+
+	.header__burger {
+		display: block; /*бургер отрисовался*/
+		margin-right: 30px;
+	}
+	
+	.menu { /*выпадающее меню для смартфона*/
+		flex-direction: column; /*позиции меню - в виде колонки*/
+		align-self: center; /*позиции меню - по центру*/
+		width: 100%; /*занимает весь экран*/
+		height: 100%;
+		position: fixed; /*меню - высплывающий блок*/
+		top: 0;
+		left: 0;
+		margin: auto;
+		background-color: #E5E5E5;
+		z-index: 10; /*поверх всего*/
+		padding: 100px;
+		transform: translateX(100%); /*выезжает всплывающее меню*/
+	}
+
+	.menu__link { /*выпадающее меню для смартфона*/
+		width: 100%;
+		font-size: 30px;
+		line-height: 36px;
+		color: #000;
+		margin-bottom: 24px;
+		text-align: center; /*выравниваем по центру*/
+		text-transform: lowercase; /*все буквы прописные*/
+	}
+
+	.header__nav-close { /*бургер меню превращается в крестик*/
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 30px;
+		right: 26px;
+		z-index: 11;
+	}
+
+	.header__nav-close-line{ /*линии крестика бургер меню*/
+		display: block;
+		width: 100%;
+		height: 3px;
+		background: #172F27;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%)
+	}
+
+	.header__nav-close-line:first-child { /*наклоняем 1-ую линию крестика бургер меню*/
+		transform: rotate(45deg);
+	}
+
+	.header__nav-close-line:last-child { /*наклоняем 2-ую линию крестика бургер меню*/
+		transform: rotate(-45deg);
+	}
+
+	.info {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.info__title_big {
+		width: 318px;
+	}
+
+	.info__title_small {
+		font-size: 60px;
+		line-height: 79px;
+	}
+
+	.info__description {
+		width: 292px;
+		text-align: center;
+		font: normal 18px/22px MuseoSansCyrl;
+	}
+
+	.button__book {
+		width: 209px;
+		height: 44px;
+		font: normal 16px/19px MuseoSansCyrl; 
+	}
+
+	.column-img {
+		display: none;
+	}
+
+}
+
+/*Media end*/
