@@ -7,22 +7,20 @@ html {
 }
 
 body {
-	max-width: 1920px; /*резиновая ширина*/
-	min-width: 375px;
 	height: 100vh; /*значение высоты опр-ся по viewport*/
 	margin: 0 auto; /*выравнивание по центру*/
 	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
 	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
 	color: #E8EEE4; /*цвет шрифта*/
 	font: normal 22px/26px MuseoSansCyrl; /*стиль шрифта*/
-	overflow: hidden;
+	overflow: scroll;
 }
 
 /*header styles start*/
 .container {
-	max-width: 1650px; /*резиновая ширина*/
+	max-width: 1650px; 
+	max-height: 180px;
 	margin: 0 auto; /*выравнивание по центру*/
-	padding: 0 15px;
 }
 
 .header__row { 
@@ -30,12 +28,12 @@ body {
 	align-items: flex-end; /*вертикальное выравнивание по нижнему краю контейнера*/
 	justify-content: space-between; /*выравнивание по ширине - по краям конейнера*/
 	width: 100%;
-	margin-left: 5%;
-	margin-bottom: 9.5%; /*отсутп вниз*/
+	margin: 0 5%;
+	margin-bottom: 9.5%;
 }
 
 .header__logo {
-	padding-top: 8.2%;
+	padding-top: 6%;
 	width: 146px;
 }
 
@@ -44,13 +42,14 @@ body {
 	max-height: 100%;
 }
 
-.header__menu .menu{
+.header__menu {
 	display: flex;
-	padding-right: 30px;
-
+	justify-content: space-around;
+	margin-right: 6%;
 }
 
 .menu__link {
+	flex-wrap: nowrap;
 	color: #E8EEE4;
 	margin-right: 33.75px; /*отступ справа у пуктов меню*/
 	text-decoration: none; /*убрали нижнее подчеркивание*/
@@ -60,7 +59,7 @@ body {
 	opacity: .50;
 }
 
-.header__burger {
+.header__burger { /*бургер-меню*/
 	display: none;
 	width: 25px;
 	height: 17px;
@@ -96,23 +95,20 @@ body {
 
 .content {
 	display: flex;
-	margin-left: 5%;
-
+	margin-left: 10%;
 }
 
 .info {
-	flex: 2; /*ширина флекс элемента*/
+	flex: 2.5; /*ширина флекс элемента*/
 	justify-content: center; /*выравнивание элементов по ширине - центр*/
 	display: flex;
 	flex-flow: column; /*flex-элементы в виде блоков друг над другом*/
-	max-width: 551px; /*резиновая ширина*/
-	max-height: 600px; /*резиновая высота*/
-	margin-right: 16.63%;
+	margin-right: 20%;
 }
 
 .info__title {
-	max-height: 400px; /*резиновая высота*/
-	max-width: 530px; /*резиновая ширина*/
+	max-height: 400px; 
+	max-width: 530px; 
 }
 
 .info__title_big {
@@ -126,7 +122,7 @@ body {
 }
 
 .info__title_small {
-	font-family: 'PT Serif'; /*шрифт*/
+	font-family: 'PT Serif'; 
 	font-style: normal;
 	font-size: 98px;
 	line-height: 130px;
@@ -146,21 +142,15 @@ body {
 }
 
 .column-img {
-	flex: 1 1 auto; 
+	flex: 1 1 auto;
+	overflow: hidden;
 	display: flex;
-	justify-content: flex-end;  /*выравние ширине - по правому краю строки*/
-	align-items: center; /*выравнивание по высоте - центр*/
-	max-width: 880px;
-	min-width: 610px;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.img__title {
-	flex: 1 1 auto; 
-	margin-right: 33.75px; 
-}
-
-.img__title:last-child {
-	margin-right: 0; /*убрали отступ справа у последней картинки*/
+.column-img img {
+	margin-right: 2%; 
 }
 
 /*content styles end*/
@@ -169,8 +159,8 @@ body {
 
 @media (min-width: 769px) and (max-width: 1366px) {
 	body {
-		max-width: 1366px; 
-		min-width: 1024px;
+		/*max-width: 1366px; 
+		min-width: 1024px;*/
 		font: normal 16px/19px MuseoSansCyrl;
 	}
 
@@ -185,7 +175,6 @@ body {
 	.info__title_small {
 		font-size: 70px;
 		line-height: 93px;
-		margin: -70px 0 25px 70px; 
 	}
 
 	.button__book {
@@ -194,9 +183,8 @@ body {
 		font: normal 16px/19px MuseoSansCyrl;
 	}
 }
-
 @media (max-width: 768px) {
-	
+
 	.header__row { 
 		margin-bottom: 50%; 
 	}
@@ -209,7 +197,7 @@ body {
 		display: block; /*бургер отрисовался*/
 		margin-right: 30px;
 	}
-	
+
 	.menu { /*выпадающее меню для смартфона*/
 		flex-direction: column; /*позиции меню - в виде колонки*/
 		align-self: center; /*позиции меню - по центру*/
