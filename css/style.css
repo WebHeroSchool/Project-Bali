@@ -28,13 +28,13 @@ body {
 	align-items: flex-end; /*вертикальное выравнивание по нижнему краю контейнера*/
 	justify-content: space-between; /*выравнивание по ширине - по краям конейнера*/
 	width: 100%;
-	margin: 0 5%;
 	margin-bottom: 9.5%;
 }
 
 .header__logo {
 	padding-top: 6%;
 	width: 146px;
+	margin-left: 10%;
 }
 
 .header__logo img {
@@ -185,8 +185,8 @@ body {
 }
 @media (max-width: 768px) {
 
-	.header__row { 
-		margin-bottom: 50%; 
+	.header__row {
+		margin-bottom: 20%;
 	}
 
 	.header__logo {
@@ -213,7 +213,7 @@ body {
 		transform: translateX(100%); /*выезжает всплывающее меню*/
 	}
 
-	.menu__link { /*выпадающее меню для смартфона*/
+	.menu__link { /*позиции выпадающего меню для смартфона*/
 		width: 100%;
 		font-size: 30px;
 		line-height: 36px;
@@ -242,11 +242,11 @@ body {
 		transform: translateY(-50%)
 	}
 
-	.header__nav-close-line:first-child { /*наклоняем 1-ую линию крестика бургер меню*/
+	.header__nav-close-line:first-child { /*наклоняем 1-ую линию крестика бургер-меню*/
 		transform: rotate(45deg);
 	}
 
-	.header__nav-close-line:last-child { /*наклоняем 2-ую линию крестика бургер меню*/
+	.header__nav-close-line:last-child { /*наклоняем 2-ую линию крестика бургер-меню*/
 		transform: rotate(-45deg);
 	}
 
