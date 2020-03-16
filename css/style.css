@@ -1,37 +1,41 @@
 html {
 	box-sizing: border-box; /*padding и border включаются в общую ширину и высоту элемента*/
-}
+ }
 
 *, *::before, *::after {
 	box-sizing: inherit;
 }
 
+html. body {
+	height: 100%;
+}
+
 body {
-	height: 100vh; /*значение высоты опр-ся по viewport*/
-	margin: 0 auto; 
-	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
-	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
+		margin: 0 auto; 
 	color: #E8EEE4; 
 	font: normal 22px/26px MuseoSansCyrl;
 	overflow: scroll;
-	border: 2px solid red;
+}
+
+.wrap {
+	max-width: 1920px;
+	height: 100vh;
+	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
+	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
+	margin: 0 auto;
 }
 
 /*header styles start*/
-.container { /*ограничиваем ширину контента страницы*/
-	width: 90vw; 
-	height: 30vh;
-}
 
-.header__row { 
-	display: flex; 
-	align-items: center; /*вертикальное выравнивание по центру контейнера*/
-	justify-content: space-between; /*выравнивание по ширине - по краям конейнера*/
-	padding-top: 10vh;
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5vh;
+	margin-bottom: 9vh;
 }
 
 .header__logo {
-	width: 146px;
 	margin-left: 5vw;
 }
 
@@ -91,16 +95,15 @@ body {
 
 .content {
 	display: flex;
-	margin-left: 10vh;
-	margin-top: 20vh;
+	justify-content: space-between;
 }
 
 .info {
-	flex: 2.5; /*ширина флекс элемента*/
+	flex: 1; /*ширина флекс элемента*/
 	justify-content: center; /*выравнивание элементов по ширине - центр*/
 	display: flex;
 	flex-flow: column; /*flex-элементы в виде блоков друг над другом*/
-	margin-right: 20%;
+	padding: 0 5vw;
 }
 
 .info__title {
@@ -126,6 +129,10 @@ body {
 	margin: -70px 0 25px 70px; /*отступы, чтобы надпись съехала впрво вверх*/
 }
 
+.info__description {
+	max-width: 550px;
+}
+
 .button__book {
 	width: 293px;
 	height: 62px;
@@ -138,28 +145,38 @@ body {
 	cursor: pointer; /*курсор - указатель*/
 }
 
-.column-img {
-	flex: 1 1 auto;
-	overflow: hidden;
+.photo-row {
+	flex: 1.5;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.column-img img {
-	margin-right: 2%; 
+.photo-row div {
+	flex: auto;
+	margin: 1vw;
 }
 
+.photo-row div:last-child {
+	margin-right: 0;
+}
+
+.photo-row div img {
+	width: 100%;
+	height: auto;
+	z-index: 0;
+}
 /*content styles end*/
 
 /*Media start*/
 
 @media (min-width: 769px) and (max-width: 1366px) {
+	
 	body {
 		font: normal 16px/19px MuseoSansCyrl;
 	}
 
-	.header__logo {
+		.header__logo {
 		width: 104px;
 	}
 
@@ -172,13 +189,27 @@ body {
 		line-height: 93px;
 	}
 
+.info__description {
+	max-width: 400px;
+}
 	.button__book {
 		width: 209px;
 		height: 44px;
 		font: normal 16px/19px MuseoSansCyrl;
 	}
+
 }
-@media (max-width: 768px) {
+
+
+@media (min-width: 319px) and (max-width: 768px) {
+	
+  .wrap {
+	/*max-width: none;*/
+}
+
+	.header {
+		padding: 5vh;
+	}
 
 	.header__row {
 		margin-bottom: 20%;
@@ -244,9 +275,14 @@ body {
 		transform: rotate(-45deg);
 	}
 
+	.content {
+		justify-content: center;
+	}
+
 	.info {
 		justify-content: center;
 		align-items: center;
+		margin-right: 0;
 	}
 
 	.info__title_big {
@@ -256,6 +292,7 @@ body {
 	.info__title_small {
 		font-size: 60px;
 		line-height: 79px;
+		margin: -40px 20px 25px 50px; 
 	}
 
 	.info__description {
@@ -270,7 +307,7 @@ body {
 		font: normal 16px/19px MuseoSansCyrl; 
 	}
 
-	.column-img {
+	.photo-row {
 		display: none;
 	}
 
