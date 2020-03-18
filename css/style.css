@@ -11,15 +11,14 @@ html. body {
 }
 
 body {
-		margin: 0 auto; 
+	margin: 0 auto; 
 	color: #E8EEE4; 
 	font: normal 22px/26px MuseoSansCyrl;
 	overflow: scroll;
 }
 
 .wrap {
-	max-width: 1920px;
-	height: 100vh;
+	height: 150vh;
 	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
 	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
 	margin: 0 auto;
@@ -99,7 +98,7 @@ body {
 }
 
 .info {
-	flex: 1; /*ширина флекс элемента*/
+	flex: 0 1 50%; /*ширина флекс элемента*/
 	justify-content: center; /*выравнивание элементов по ширине - центр*/
 	display: flex;
 	flex-flow: column; /*flex-элементы в виде блоков друг над другом*/
@@ -145,32 +144,31 @@ body {
 	cursor: pointer; /*курсор - указатель*/
 }
 
-.photo-row {
-	flex: 1.5;
+ .photo-row {
+	flex: 0 1 50%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 }
 
-.photo-row div {
-	flex: auto;
-	margin: 1vw;
+.photo-row__photo {
+	margin-right: 1vw;
 }
 
-.photo-row div:last-child {
+.photo-row__photo:last-child {
 	margin-right: 0;
 }
 
-.photo-row div img {
-	width: 100%;
-	height: auto;
-	z-index: 0;
+img {
+	max-width:100%;
 }
+
+
 /*content styles end*/
 
 /*Media start*/
 
-@media (min-width: 769px) and (max-width: 1366px) {
+@media (min-width: 951px) and (max-width: 1366px) {
 	
 	body {
 		font: normal 16px/19px MuseoSansCyrl;
@@ -200,14 +198,9 @@ body {
 
 }
 
-
-@media (min-width: 319px) and (max-width: 768px) {
+@media(min-width: 320px) and (max-width: 950px) {
 	
-  .wrap {
-	/*max-width: none;*/
-}
-
-	.header {
+ 	.header {
 		padding: 5vh;
 	}
 
