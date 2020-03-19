@@ -18,7 +18,7 @@ body {
 }
 
 .wrap {
-	height: 150vh;
+	height: 100vh;
 	background: url(../img/iswanto-arif-448003-unsplash.png) no-repeat center; /*фоновая картинка*/
 	background-size: cover; /*картинка полностью покрывает блок при любых размерах*/
 	margin: 0 auto;
