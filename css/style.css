@@ -217,6 +217,7 @@ img {
 	}
 
 	.menu { /*выпадающее меню для смартфона*/
+		display: flex;
 		flex-direction: column; /*позиции меню - в виде колонки*/
 		align-self: center; /*позиции меню - по центру*/
 		width: 100%; /*занимает весь экран*/
@@ -227,9 +228,14 @@ img {
 		margin: auto;
 		background-color: #E5E5E5;
 		z-index: 10; /*поверх всего*/
-		padding: 100px;
+		padding: 150px 100px;
 		transform: translateX(100%); /*выезжает всплывающее меню*/
+		transition: .2s all linear; /*плавно выезажет*/
 	}
+
+.menu_active {
+	transform: translateX(0); /*всплывающее меню выезжает справа*/
+}
 
 	.menu__link { /*позиции выпадающего меню для смартфона*/
 		width: 100%;
